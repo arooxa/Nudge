@@ -70,3 +70,9 @@ font-size: 30px;
 }
 
 `;
+
+export const Alert = styled.div`
+    width: 100%;
+    height: 30px;
+    color: red
+`;

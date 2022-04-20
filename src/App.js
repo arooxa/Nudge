@@ -4,20 +4,23 @@ import About from "./pages/About";
 import Game from "./pages/Game";
 import SignIn from "./pages/SignIn";
 import Error from "./pages/Error";
-import NavBar from "./components/NavBar";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { AuthProvider } from './contexts/AuthContext';
 
 function App() {
   return (
     <Router>
+      <AuthProvider>
       <Routes>
         <Route path="/" element={<Landing />} />
-        <Route path="/about" element={<About />} />
+        <Route path="/home" element={<Home />} />
         <Route path="/game" element={<Game />} />
         <Route path="/sign-in" element={<SignIn />} />
         <Route path="*" element={<Error />} />
       </Routes>
+      </AuthProvider>
     </Router>
+    
   );
 }
 
