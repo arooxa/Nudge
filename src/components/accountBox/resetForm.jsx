@@ -6,7 +6,7 @@ import { AccountContext } from "./accountContext";
 import { useAuth }from '../../contexts/AuthContext';
 import { useNavigate } from 'react-router-dom';
 
-export function LoginForm(props) {
+export function ResetForm(props) {
     const emailRef = useRef();
     const passwordRef = useRef();
     const { login } = useAuth();
@@ -15,36 +15,32 @@ export function LoginForm(props) {
     const navigate = useNavigate();
 
     async function handleSubmit(e) {
-        console.log('submitted');
         e.preventDefault()
         
         try {
             setError('')
             setLoading(true);
-            await login(emailRef.current.value, passwordRef.current.value);
-            navigate('/home');
+            await login(emailRef.current.value);
+            navigate('/');
         } catch(error) {
-            setError("Failed to sign in")
+            setError("Failed to reset");
         }
         setLoading(false);
 
     }
-    const { switchToSignUp, switchToReset } = useContext(AccountContext);
+    const { switchToSignIn, switchToSignUp } = useContext(AccountContext);
 
 
     return <BoxContainer>
         <FormContainer>
             {error && <Alert variant="success">{error}</Alert>}
             <Input type="email" ref={emailRef} placeholder="Email" required />
-            <Marginer direction="vertical" margin={20} />
-            <Input type="password" ref={passwordRef} placeholder="Password" required />
         </FormContainer>
 
-        <Marginer direction="vertical" margin={5} />
-        <MutedLink href='#' onClick={switchToReset}>Forget your password?</MutedLink>
         <Marginer direction="vertical" margin="1.6em" />
-        <SubmitButton type="submit" onClick={handleSubmit} disabled={loading}>Sign In</SubmitButton>
+        <SubmitButton type="submit" onClick={handleSubmit} disabled={loading}>Reset Password</SubmitButton>
         <Marginer direction="vertical" margin="1em" />
+        <BoldLink href='#' onClick={switchToSignIn}> Log In</BoldLink>
         <MutedLink href='#'>
             Don't have an account?   
             <BoldLink href='#' onClick={switchToSignUp}> Sign Up</BoldLink>

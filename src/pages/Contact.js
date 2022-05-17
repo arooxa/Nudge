@@ -1,20 +1,13 @@
-import * as React from 'react';
-import styled from 'styled-components'
-import { useAuth } from '../contexts/AuthContext';
+import React from "react";
+import styled from "styled-components";
 
-const Home = () => {
-
-  const { currentUser } = useAuth();
-
+const Contact = () => {
   return (
     <Background>
-      <h1>{currentUser.uid}</h1>
-      <h1>this is currentUser</h1>
+      <h1>this is contact page</h1>
     </Background>
   );
 };
-
-
 
 const Background = styled.section`
     height: calc(100vh - 60px);
@@ -27,4 +20,5 @@ const Background = styled.section`
     padding-bottom: 2%;
 `;
 
-export default Home;
+
+export default Contact;

@@ -4,7 +4,14 @@ html,
 body {
   width: 100%;
   height: 100%;
-  overflow-x: hidden;
+  overflow-x: none;
+  overflow-y: none;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+body::-webkit-scrollbar {
+  display: none
 }
 
 * {
@@ -27,5 +34,4 @@ code {
 
 #root {
   width: 100%;
-  height: 100%;
 }

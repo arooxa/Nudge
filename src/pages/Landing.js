@@ -1,8 +1,7 @@
 import React from "react"
 import styled from 'styled-components'
 import background from '../images/landing-background.svg'
-import logo from '../images/zebra-head.jpg'
-import { AccountBox } from '../components/accountBox'
+import { AccountBox } from '../components/AccountBox'
 
 const Landing = () => {
   return (

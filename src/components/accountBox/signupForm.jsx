@@ -5,6 +5,8 @@
     import { AccountContext } from "./accountContext";
     import { useAuth }from '../../contexts/AuthContext';
     import { useNavigate } from 'react-router-dom';
+    import { db } from '../../firebase-config';
+    import {doc, setDoc} from 'firebase/firestore';
 
 export function SignUpForm(props) {
     const nameRef = useRef();
@@ -27,8 +29,8 @@ export function SignUpForm(props) {
         try {
             setError('')
             setLoading(true);
-            await signup(emailRef.current.value, passwordRef.current.value);
-            navigate('/home');
+            await signup(emailRef.current.value, passwordRef.current.value)
+            navigate('/home'); 
         } catch(error) {
             setError("Failed to create an Account")
         }

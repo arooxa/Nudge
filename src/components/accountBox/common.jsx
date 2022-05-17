@@ -51,23 +51,23 @@ export const Input = styled.input`
 `;
 
 export const SubmitButton = styled.button`
-padding: 10px 0px;
-width: 70%;
-border-radius: 20px;
-background: #fff;
-color:#ef5777;
-outline: none;
-border: 1px solid #ef5777;
-cursor: pointer;
-transition: all 0.2s ease-in-out;
-text-decoration: none;
-font-size: 30px;
+    padding: 10px 0px;
+    width: 70%;
+    border-radius: 20px;
+    background: #fff;
+    color:#ef5777;
+    outline: none;
+    border: 1px solid #ef5777;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    text-decoration: none;
+    font-size: 30px;
 
-&:hover {
-    transition: all 0.4s ease-in-out;
-    background: #ef5777;
-    color: #fff;
-}
+    &:hover {
+        transition: all 0.4s ease-in-out;
+        background: #ef5777;
+        color: #fff;
+    }
 
 `;
 

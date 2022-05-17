@@ -1,15 +1,11 @@
 import * as React from 'react';
 import styled from 'styled-components'
-import { useAuth } from '../contexts/AuthContext';
+import CalendarDisplay from "../components/Calendar/Calendar";
 
-const Home = () => {
-
-  const { currentUser } = useAuth();
-
+const Calendar = () => {
   return (
     <Background>
-      <h1>{currentUser.uid}</h1>
-      <h1>this is currentUser</h1>
+      <CalendarDisplay />
     </Background>
   );
 };
@@ -27,4 +23,4 @@ const Background = styled.section`
     padding-bottom: 2%;
 `;
 
-export default Home;
+export default Calendar;
